@@ -15,5 +15,14 @@ public class Main {
         for(Book book:booksByName){
             System.out.println(book);
         }
+
+        Set<Book> booksByPageCount = new TreeSet<>((book1, book2) -> Integer.compare(book1.getPageCount(), book2.getPageCount()));
+        booksByPageCount.addAll(booksByName);
+
+        System.out.println("\nBooks sorted by page count:");
+        for (Book book : booksByPageCount) {
+            System.out.println(book);
+        }
+        
     }
 }
